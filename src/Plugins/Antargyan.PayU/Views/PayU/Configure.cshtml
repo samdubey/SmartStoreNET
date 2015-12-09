@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "";
+}
+@model Antargyan.PayU.Models.ConfigurationModel
+@using SmartStore.Web.Framework;
+@using (Html.BeginForm())
+{
+    <table class="adminContent">
+        <tr>
+        <tr>
+            <td class="adminTitle">@Html.SmartLabelFor(model => model.Key):
+            </td>
+            <td class="adminData">@Html.EditorFor(model => model.Key)
+                @Html.ValidationMessageFor(model => model.Key)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">@Html.SmartLabelFor(model => model.Salt):
+            </td>
+            <td class="adminData">@Html.EditorFor(model => model.Salt)
+                @Html.ValidationMessageFor(model => model.Salt)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">@Html.SmartLabelFor(model => model.MerchantParam):
+            </td>
+            <td class="adminData">@Html.EditorFor(model => model.MerchantParam)
+                @Html.ValidationMessageFor(model => model.MerchantParam)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">@Html.SmartLabelFor(model => model.PayUri):
+            </td>
+            <td class="adminData">@Html.EditorFor(model => model.PayUri)
+                @Html.ValidationMessageFor(model => model.PayUri)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">@Html.SmartLabelFor(model => model.AdditionalFee):
+            </td>
+            <td class="adminData">@Html.EditorFor(model => model.AdditionalFee)
+                @Html.ValidationMessageFor(model => model.AdditionalFee)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">@Html.SmartLabelFor(model => model.IsPayUBiz):
+            </td>
+            <td class="adminData">@Html.EditorFor(model => model.IsPayUBiz)
+                @Html.ValidationMessageFor(model => model.IsPayUBiz)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">&nbsp;</td>
+            <td class="adminData">
+                <button type="submit" name="save" class="btn btn-primary" value="save">
+                    @T("Admin.Common.Save")
+                </button>
+            </td>
+        </tr>
+    </table>
+
+}

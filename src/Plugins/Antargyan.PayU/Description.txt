@@ -1,0 +1,11 @@
+﻿FriendlyName: PayU with Antargyan
+Description: PayU Payment Gateway
+SystemName: Antargyan.PayU
+Version: 2.2.0.0
+Group: Payment
+MinAppVersion: 2.2.0
+Author: Antargyan CloudWorks (sam@antargyan.com)
+DisplayOrder: 1
+FileName: Antargyan.PayU.dll
+ResourceRootKey: Plugins.Antargyan.PayU
+Url: http://community.smartstore.com/index.php?/files/file/55-antargyan-payu-payment-gateway-plugin/
