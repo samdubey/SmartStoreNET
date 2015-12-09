@@ -106,7 +106,7 @@ namespace Antargyan.PayU.Controllers
             Order orderById = this._orderService.GetOrderById(Convert.ToInt32(OrderId));
             if (this._orderProcessingService.CanMarkOrderAsPaid(orderById))
                 this._orderProcessingService.MarkOrderAsPaid(orderById);
-            return RedirectToRoute("CheckoutCompleted");
+            return RedirectToAction("Completed", "Checkout", new { area = "" });
         }
     }
 }

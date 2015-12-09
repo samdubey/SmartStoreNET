@@ -1,4 +1,5 @@
-﻿using Antargyan.PayU.Helpers;
+﻿using Antargyan.PayU.Controllers;
+using Antargyan.PayU.Helpers;
 using Antargyan.PayU.Settings;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Directory;
@@ -36,7 +37,7 @@ namespace Antargyan.PayU.Providers
         }
         public override Type GetControllerType()
         {
-            return base.GetControllerType();
+            return typeof(PayUController);
         }
         public override void GetConfigurationRoute(out string actionName, out string controllerName, out System.Web.Routing.RouteValueDictionary routeValues)
         {
@@ -58,8 +59,8 @@ namespace Antargyan.PayU.Providers
             remotePostHelper.Add("txnid", postProcessPaymentRequest.Order.Id.ToString());
             if (!_payuSettings.IsPayUBiz)
                 remotePostHelper.Add("service_provider", "payu_paisa");
-            remotePostHelper.Add("surl", _webHelper.GetStoreLocation(false) + "Plugins/PayU/Return");
-            remotePostHelper.Add("furl", _webHelper.GetStoreLocation(false) + "Plugins/PayU/Return");
+            remotePostHelper.Add("surl", _webHelper.GetStoreLocation(false) + "Plugins/Antargyan.PayU/Return");
+            remotePostHelper.Add("furl", _webHelper.GetStoreLocation(false) + "Plugins/Antargyan.PayU/Return");
             remotePostHelper.Add("hash", myUtility.getchecksum(_payuSettings.Key.ToString(),
                 postProcessPaymentRequest.Order.Id.ToString(), postProcessPaymentRequest.Order.OrderTotal.ToString(new CultureInfo("en-US", false).NumberFormat),
                 "productinfo", postProcessPaymentRequest.Order.BillingAddress.FirstName.ToString(),
